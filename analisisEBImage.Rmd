@@ -1,12 +1,12 @@
 ---
 title: "Analisis Image dengan menggunakan EBimage"
-author: "Mila Amarila P"
+author: "Mila Amarila Prameswari - Dosen Pengampu: Prof.Dr. Suhartono, M.Kom . Teknik Informatika UIN Maulana Malik Ibrahim Malang"
 date: "14 Maret 2021"
 output: html_document
 ---
 
 
-proses Import image 
+# proses Import image 
 ```{r}
 library(EBImage)
 Image <- readImage("D:/Rmarkdown/analisisEBimage/foto2.jpg")
@@ -57,7 +57,7 @@ plot(Image6)
 
 
 
-#Cropping
+# Cropping
 ```{r}
 
 display(Image[189:1000, 100:600,])
@@ -68,7 +68,7 @@ display(Image[189:1000, 100:600,])
 
 
 
-#Transformasi Spasial
+# Transformasi Spasial
 ```{r}
 Imagetr <- translate(rotate(Image, 45), c(50,0))
 display(Imagetr)
@@ -77,7 +77,7 @@ display(Imagetr)
 
 
 
-#Manajemen warna
+# Manajemen warna
 ```{r}
 colorMode(Image) <- Grayscale
 display(Image)
@@ -90,7 +90,7 @@ display(Image)
 
 
 
-#low-pass filter
+# low-pass filter
 ```{r}
 flow <- makeBrush(21, shape= 'disc', step=FALSE)^2
 flow <- flow/sum(flow)
@@ -101,7 +101,7 @@ display(Image.flow)
 
 
 
-#high-pass filter
+# high-pass filter
 ```{r}
 fHigh <- matrix(1, nc=3, nr=3)
 fHigh[2,2]<- -8
